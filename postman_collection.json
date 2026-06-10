@@ -1,0 +1,52 @@
+{
+  "info": {
+    "name": "AI Photo Manager",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Scan Local",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"paths\": [\"/path/to/images\"]}"
+        },
+        "url": {
+          "raw": "{{base_url}}/scan/local",
+          "host": ["{{base_url}}"],
+          "path": ["scan", "local"]
+        }
+      }
+    },
+    {
+      "name": "Search",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\": \"travel photos\", \"top_n\": 10}"
+        },
+        "url": {
+          "raw": "{{base_url}}/search",
+          "host": ["{{base_url}}"],
+          "path": ["search"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Photo Manager</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="site-nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">A</span>
+        <span>AI Photo Manager</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#demo">Try now</a>
+      </div>
+    </nav>
+
+    <header class="hero-panel" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Photo Management Platform</p>
+        <h1>Organize every photo library with search, intelligence, and speed</h1>
+        <p class="hero-text">
+          Connect Google Photos and local folders, detect duplicates, categorize documents and everyday photos, group faces, and search with natural language.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#demo">Launch demo</a>
+          <a class="button button-secondary" href="/docs" target="_blank">Open API docs</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-card">
+          <p class="card-label">Core platform</p>
+          <p class="card-text">
+            One unified workflow for ingestion, duplicate detection, category tagging, face grouping, semantic search, Docker deployment, and automated testing.
+          </p>
+          <div class="card-list">
+            <span>Local folder scan</span>
+            <span>Google Photos sync</span>
+            <span>Duplicate detection</span>
+            <span>Document categories</span>
+            <span>Face grouping</span>
+            <span>Text-based search</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="features" class="section section-features">
+      <h2>Built for real photo libraries</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Find duplicates fast</h3>
+          <p>Automatically surface exact and near-duplicate images so you can clean your library.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Group people by face</h3>
+          <p>Use face clustering to identify and group similar people across your collection.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Search with plain language</h3>
+          <p>Type queries like “sunset beach” or “family dinner” and get relevant indexed images.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Local + Google Photos support</h3>
+          <p>Scan local folders or import from Google Photos to build one combined image index.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="demo" class="section section-demo">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Live workspace</p>
+          <h2>Explore the product in the browser</h2>
+          <p>Run health checks, sync Google Photos, scan local folders, search the index, and inspect your photo results from one place.</p>
+        </div>
+      </div>
+
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3>Health check</h3>
+          <p>Verify the app is running and see how many images are indexed.</p>
+          <button id="healthButton" class="button button-primary">Check health</button>
+        </div>
+
+        <div class="demo-card">
+          <h3>Scan local images</h3>
+          <p>Enter a folder path that is accessible to the running server.</p>
+          <input id="scanPath" type="text" placeholder="Example: /Users/you/Pictures" />
+          <button id="scanButton" class="button button-primary">Scan folder</button>
+        </div>
+
+        <div class="demo-card">
+          <h3>Connect Google Photos</h3>
+          <p>Use your OAuth client secret JSON to sign in and import your Google Photos library.</p>
+          <input id="googleClientSecretsPath" type="text" placeholder="Example: data/client_secret.json" value="data/client_secret.json" />
+          <input id="googleTokenPath" type="text" placeholder="Example: data/google_photos_token.json" value="data/google_photos_token.json" />
+          <button id="googlePhotosButton" class="button button-primary">Sync Google Photos</button>
+        </div>
+
+        <div class="demo-card">
+          <h3>Search images</h3>
+          <p>Try natural language queries like “holiday photo”, “receipt”, or “dog”.</p>
+          <input id="searchQuery" type="text" placeholder="Example: holiday photo" />
+          <button id="searchButton" class="button button-primary">Search</button>
+        </div>
+
+        <div class="demo-card">
+          <h3>Browse indexed data</h3>
+          <div class="button-row">
+            <button id="imagesButton" class="button button-secondary">List images</button>
+            <button id="duplicatesButton" class="button button-secondary">Find duplicates</button>
+            <button id="facesButton" class="button button-secondary">Group faces</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="output-panel">
+        <div class="output-header">
+          <h3>Response output</h3>
+          <p>Results from each request appear here so you can inspect the live API response.</p>
+        </div>
+        <pre id="outputArea">Ready to interact with the app.</pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>AI Photo Manager · FastAPI backend · Google Photos and local library management</p>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  ai-photo-manager:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/data/google_photos_client_secret.json
